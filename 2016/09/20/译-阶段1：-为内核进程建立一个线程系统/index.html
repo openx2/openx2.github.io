@@ -13,7 +13,7 @@ Stock Nachos has an incomplete thread system. In this assignment, your job is to
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="Phase 1: Build a thread system for kernel processesStock Nachos是一个未完成的线程系统。在本次作业中，你的任务是完成它，并且使用它去解决几个同步问题。
 Stock Nachos has an incomplete thread system. In this assignment, your job is to complete it,">
-<meta property="og:updated_time" content="2016-09-21T09:15:59.366Z">
+<meta property="og:updated_time" content="2016-09-21T09:20:26.089Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="[译] 阶段1： 为内核进程建立一个线程系统">
 <meta name="twitter:description" content="Phase 1: Build a thread system for kernel processesStock Nachos是一个未完成的线程系统。在本次作业中，你的任务是完成它，并且使用它去解决几个同步问题。
@@ -55,9 +55,9 @@ Stock Nachos has an incomplete thread system. In this assignment, your job is to
       </nav>
       <nav id="sub-nav">
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
@@ -207,11 +207,12 @@ Stock Nachos has an incomplete thread system. In this assignment, your job is to
 </li>
 <li>(25%, 150 lines) Now that you have all of these synchronization devices, use them to solve this problem. You will find condition variables to be the most<br>useful synchronization method for this problem.<br><br>A number of Hawaiian adults and children are trying to get from Oahu to Molokai. Unfortunately, they have only one boat which can carry maximally two<br>children or one adult (but not one child and one adult). The boat can be rowed back to Oahu, but it requires a pilot to do so.<br><br>Arrange a solution to transfer everyone from Oahu to Molokai. You may assume that there are at least two children.<br><br>The method <code>Boat.begin()</code> should fork off a thread for each child or adult. We will refer to the thread that called <code>Boat.begin()</code> as the parent thread. Your<br>mechanism cannot rely on knowing how many children or adults are present beforehand, although you are free to attempt to determine this among the threads<br>(i.e. you can’t pass the parameters adults and children in the method <code>begin()</code> to your threads, but you are free to have each thread increment shared<br>variables to try and determine this value, if you wish).<br><br>To show that the trip is properly synchronized, make calls to the appropriate BoatGrader methods every time someone crosses the channel. When a child pilots the boat from Oahu to Molokai, call <code>ChildRowToMolokai</code>. When a child rides as a passenger from Oahu to Molokai, call <code>ChildRideToMolokai</code>. Make sure that when a boat with two people on it crosses, the pilot calls the …RowTo… method before the passenger calls the …RideTo… method.<br><br>Your solution must have no busy waiting, and it must eventually end. The simulation ends when the parent thread finishes running. Note that it is not necessary to terminate all the forked threads – you can leave them blocked waiting for a condition variable. While you cannot pass the number of threads created to the threads representing adults and children, you can and probably will need to use this number in <code>begin()</code> in order to determine when all the adults and children are across and you can return.<br><br>The idea behind this task is to use independent threads to solve a problem. You are to program the logic that a child or an adult would follow if that person were in this situation. For example, it is reasonable to allow a person to see how many children or adults are on the same island they are on. A person could see whether the boat is at their island. A person can know which island they are on. All of this information may be stored with each individual thread or in shared variables. So a counter that holds the number of children on Oahu would be allowed, so long as only threads that represent people on Oahu could access it.<br><br>What is not allowed is a thread which executes a “top-down” strategy for the simulation. For example, you may not create threads for children and adults, then have a controller thread simply send commands to them through communicators. The threads must act as if they were individuals. <strong>This also means you cannot serialize your code by disabling interrupts inside <code>Boat.java</code> explicitly, for any reason.</strong> Every person must be thinking, and acting, independently at all times.<br><br>Information which is not possible in the real world is also not allowed. For example, a child on Molokai cannot magically see all of the people on Oahu. That child may remember the number of people that he or she has seen leaving, but the child may not view people on Oahu as if it were there. (Assume that the people do not have any technology other than a boat!)<br><br>You will reach a point in your simulation where the adult and child threads believe that everyone is across on Molokai. At this point, you are allowed to do <strong>one-way</strong> communication from the adult/child threads to <code>begin()</code> (the parent thread) in order to inform it that the simulation may be over. It may be possible, however, that your adult and child threads are incorrect. Your simulation must handle this case without requiring explict or implict communication from <code>begin()</code> (the parent thread) to the adult/child threads.</li>
 </ol>
+<h2 id="特别鸣谢"><a href="#特别鸣谢" class="headerlink" title="特别鸣谢"></a>特别鸣谢</h2><p>协助翻译 dejiawei <a href="&#x6d;&#97;&#105;&#108;&#x74;&#x6f;&#x3a;&#50;&#57;&#53;&#x38;&#x30;&#56;&#x39;&#53;&#52;&#64;&#x71;&#113;&#x2e;&#x63;&#111;&#109;">&#50;&#57;&#53;&#x38;&#x30;&#56;&#x39;&#53;&#52;&#64;&#x71;&#113;&#x2e;&#x63;&#111;&#109;</a></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/09/20/译-阶段1：-为内核进程建立一个线程系统/" data-id="citcf0ly00000zvqjixqervzo" class="article-share-link">Partager</a>
+      <a data-url="http://yoursite.com/2016/09/20/译-阶段1：-为内核进程建立一个线程系统/" data-id="citcp8rr80001ieqjerhvtrl5" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Nachos/">Nachos</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/操作系统/">操作系统</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/课程设计/">课程设计</a></li></ul>
@@ -224,7 +225,7 @@ Stock Nachos has an incomplete thread system. In this assignment, your job is to
   
   
     <a href="/2016/09/20/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Ancien</strong>
+      <strong class="article-nav-caption">Older</strong>
       <div class="article-nav-title">Hello World</div>
     </a>
   
@@ -239,7 +240,7 @@ Stock Nachos has an incomplete thread system. In this assignment, your job is to
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Catégories</h3>
+    <h3 class="widget-title">Categories</h3>
     <div class="widget">
       <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/译文/">译文</a></li></ul>
     </div>
@@ -249,7 +250,7 @@ Stock Nachos has an incomplete thread system. In this assignment, your job is to
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Mot-clés</h3>
+    <h3 class="widget-title">Tags</h3>
     <div class="widget">
       <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Nachos/">Nachos</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/操作系统/">操作系统</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/课程设计/">课程设计</a></li></ul>
     </div>
@@ -259,7 +260,7 @@ Stock Nachos has an incomplete thread system. In this assignment, your job is to
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Nuage de mot-clés</h3>
+    <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
       <a href="/tags/Nachos/" style="font-size: 10px;">Nachos</a> <a href="/tags/操作系统/" style="font-size: 10px;">操作系统</a> <a href="/tags/课程设计/" style="font-size: 10px;">课程设计</a>
     </div>
@@ -278,7 +279,7 @@ Stock Nachos has an incomplete thread system. In this assignment, your job is to
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Articles récents</h3>
+    <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
         
@@ -303,7 +304,7 @@ Stock Nachos has an incomplete thread system. In this assignment, your job is to
   <div class="outer">
     <div id="footer-info" class="inner">
       &copy; 2016 John Doe<br>
-      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
 </footer>
